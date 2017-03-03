@@ -3,7 +3,10 @@ require('babel-polyfill')
 function sleep(ms) {
 	return new Promise((resolve, reject) => {
 		console.log(`sleep ${ms}`);
-		setTimeout(_ => resolve(ms), ms);
+		setTimeout(_ => {
+			console.log(`${ms} end`);
+			resolve(ms)
+		}, ms);
 	});
 }
 
